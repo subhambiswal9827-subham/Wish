@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -56,7 +56,7 @@
 
     .love-text {
       font-family: 'Dancing Script', cursive;
-      font-size: 2.7rem;
+      font-size: 2.8rem;
       color: #ff3366;
       text-shadow: 0 0 20px rgba(255, 51, 102, 0.9);
       margin: 12px 0;
@@ -70,7 +70,7 @@
     }
 
     .counter {
-      font-size: 3.2rem;
+      font-size: 3.5rem;
       font-weight: 700;
       color: #ffb703;
       text-shadow: 0 0 18px rgba(255, 183, 3, 0.8);
@@ -172,12 +172,12 @@
     <button class="btn" onclick="nextStep(2); startCounter();">Start Our Journey ✨</button>
   </div>
 
-  <!-- Screen 2: Days Together Counter -->
+  <!-- Screen 2: Days Together Counter (30 Days) -->
   <div id="step2" class="card">
-    <div class="romantic-heading" style="font-size: 2.2rem;">Days Of Togetherness</div>
+    <div class="romantic-heading" style="font-size: 2.2rem;">Days Of Love</div>
     <p>We've completed</p>
     <div class="counter" id="daysVal">0</div>
-    <p>magical days & infinite love to go! ♾️</p>
+    <p>beautiful days & forever to go! ♾️</p>
     <button class="btn" onclick="nextStep(3)">Open My Letter 💌</button>
   </div>
 
@@ -196,14 +196,14 @@
     <div class="reason-box">🌸 Your smile makes my worst days brighter</div>
     <div class="reason-box">🌹 The way you understand and care for me</div>
     <div class="reason-box">💫 You make my world feel complete</div>
-    <p style="margin-top: 10px; font-size: 0.85rem; color: #ffb6c1;">Ready for the final surprise? 🪄</p>
+    <p style="margin-top: 10px; font-size: 0.85rem; color: #ffb6c1;">Ready for the magic? 🪄</p>
     <button class="btn" onclick="nextStep(5); startFlowerRain();">See Magic 🌸</button>
   </div>
 
   <!-- Screen 5: Flower Rain & Love You Darling -->
   <div id="step5" class="card">
     <div class="romantic-heading">Forever & Always ❤️</div>
-    <div class="love-text">I Love You Darling ❤️</div>
+    <div class="love-text">Love you Darling ❤️</div>
     <div class="heart-icon">🌸✨🌹</div>
     <p>You mean the absolute universe to me! 💫</p>
     <button class="btn" onclick="nextStep(1)">Replay Surprise 🔄</button>
@@ -216,11 +216,11 @@
     }
 
     function startCounter() {
-      let target = 365; // Eithare nijara total days change kari paribe
+      let target = 30; // 30 Days Target
       let count = 0;
-      let speed = 4;
+      let speed = 40;
       let interval = setInterval(() => {
-        count += 5;
+        count += 1;
         if (count >= target) {
           count = target;
           clearInterval(interval);

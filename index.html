@@ -1,4 +1,135 @@
  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary My Darling ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #2e0854, #0b0118);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .card {
+      display: none;
+      width: 90%;
+      max-width: 380px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(14px);
+      border-radius: 24px;
+      padding: 28px 20px;
+      box-shadow: 0 12px 40px rgba(255, 75, 145, 0.35);
+      animation: fadeIn 0.8s ease-in-out;
+      z-index: 10;
+    }
+
+    .active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .romantic-heading {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.6rem;
+      color: #ff75c3;
+      text-shadow: 0 0 15px rgba(255, 117, 195, 0.8);
+      margin-bottom: 10px;
+      animation: popScale 1.3s infinite alternate ease-in-out;
+    }
+
+    .love-text {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.7rem;
+      color: #ff3366;
+      text-shadow: 0 0 20px rgba(255, 51, 102, 0.9);
+      margin: 12px 0;
+      animation: heartBeat 1.4s infinite;
+    }
+
+    .heart-icon {
+      font-size: 60px;
+      margin: 10px 0;
+      animation: heartBeat 1.4s infinite;
+    }
+
+    .counter {
+      font-size: 3.2rem;
+      font-weight: 700;
+      color: #ffb703;
+      text-shadow: 0 0 18px rgba(255, 183, 3, 0.8);
+      margin: 8px 0;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #f3e5f5;
+      margin-bottom: 18px;
+    }
+
+    .message-box {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 18px;
+      border: 1px dashed #ff75c3;
+      font-size: 0.93rem;
+      color: #ffd1dc;
+      line-height: 1.7;
+    }
+
+    .reason-box {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 11px;
+      margin-bottom: 9px;
+      font-size: 0.88rem;
+      color: #ffe4e6;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn {
+      background: linear-gradient(45deg, #ff3366, #ff6b8b);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(255, 51, 102, 0.5);
+      transition: 0.2s transform;
+    }
+
+    .btn:active {
+      transform: scale(0.92);
+    }
+
+    .flower {
+      position: fixed;
+      top: -10%;
+      user-select: none;
+      pointer-events: none;
+      z-index: 99;
+      animation: fall linear forwards;
     }
 
     @keyframes fall {
@@ -21,8 +152,8 @@
     }
 
     @keyframes popScale {
-      from { transform: scale(0.95); }
-      to { transform: scale(1.05); }
+      from { transform: scale(0.96); }
+      to { transform: scale(1.04); }
     }
 
     @keyframes fadeIn {
@@ -33,36 +164,49 @@
 </head>
 <body>
 
+  <!-- Screen 1: Welcome & Wish -->
   <div id="step1" class="card active">
     <div class="romantic-heading">Happy Anniversary!</div>
-    <div class="heart-icon">💖</div>
-    <p>Every single moment spent with you is a treasure... ✨</p>
-    <button class="btn" onclick="nextStep(2)">Read My Message 💌</button>
+    <div class="heart-icon">💖✨</div>
+    <p>Every single second with you is a pure blessing... 💫</p>
+    <button class="btn" onclick="nextStep(2); startCounter();">Start Our Journey ✨</button>
   </div>
 
+  <!-- Screen 2: Days Together Counter -->
   <div id="step2" class="card">
-    <div class="romantic-heading" style="font-size: 2.2rem;">For You 🌹</div>
-    <div class="message-box">
-      "Thank you for being my constant smile, my peace, and my greatest blessing. Having you in my life makes everything so much more beautiful. I promise to always love, respect, and care for you forever! 💕"
-    </div>
-    <button class="btn" onclick="nextStep(3)">A Little Surprise ✨</button>
+    <div class="romantic-heading" style="font-size: 2.2rem;">Days Of Togetherness</div>
+    <p>We've completed</p>
+    <div class="counter" id="daysVal">0</div>
+    <p>magical days & infinite love to go! ♾️</p>
+    <button class="btn" onclick="nextStep(3)">Open My Letter 💌</button>
   </div>
 
+  <!-- Screen 3: Love Letter -->
   <div id="step3" class="card">
-    <div class="romantic-heading" style="font-size: 2.1rem;">Why You're Special 💖</div>
-    <div class="reason-box">✨ Your smile makes my worst days better</div>
-    <div class="reason-box">🌹 The way you care for me is magical</div>
-    <div class="reason-box">💫 Life is just 100x happier with you</div>
-    <p style="margin-top: 10px; font-size: 0.85rem; color: #ffb6c1;">Ready for your flower rain? 🌸</p>
-    <button class="btn" onclick="nextStep(4); startFlowerRain();">Show Magic 🪄</button>
+    <div class="romantic-heading" style="font-size: 2.2rem;">For My Favorite 🌹</div>
+    <div class="message-box">
+      "Thank you for being my happiest thought, my constant smile, and my greatest blessing. Life is so much more beautiful with you by my side. I promise to always love, support, and cherish you forever! 💕"
+    </div>
+    <button class="btn" onclick="nextStep(4)">3 Reasons Why 💖</button>
   </div>
 
+  <!-- Screen 4: Cute Reasons -->
   <div id="step4" class="card">
+    <div class="romantic-heading" style="font-size: 2.1rem;">Why You're Special ✨</div>
+    <div class="reason-box">🌸 Your smile makes my worst days brighter</div>
+    <div class="reason-box">🌹 The way you understand and care for me</div>
+    <div class="reason-box">💫 You make my world feel complete</div>
+    <p style="margin-top: 10px; font-size: 0.85rem; color: #ffb6c1;">Ready for the final surprise? 🪄</p>
+    <button class="btn" onclick="nextStep(5); startFlowerRain();">See Magic 🌸</button>
+  </div>
+
+  <!-- Screen 5: Flower Rain & Love You Darling -->
+  <div id="step5" class="card">
     <div class="romantic-heading">Forever & Always ❤️</div>
-    <div class="love-text">Love You Darling ❤️</div>
+    <div class="love-text">I Love You Darling ❤️</div>
     <div class="heart-icon">🌸✨🌹</div>
-    <p>You mean the whole world to me!</p>
-    <button class="btn" onclick="nextStep(1)">Replay From Start 🔄</button>
+    <p>You mean the absolute universe to me! 💫</p>
+    <button class="btn" onclick="nextStep(1)">Replay Surprise 🔄</button>
   </div>
 
   <script>
@@ -71,9 +215,23 @@
       document.getElementById('step' + step).classList.add('active');
     }
 
+    function startCounter() {
+      let target = 365; // Eithare nijara total days change kari paribe
+      let count = 0;
+      let speed = 4;
+      let interval = setInterval(() => {
+        count += 5;
+        if (count >= target) {
+          count = target;
+          clearInterval(interval);
+        }
+        document.getElementById('daysVal').innerText = count + "+";
+      }, speed);
+    }
+
     function startFlowerRain() {
-      const items = ['🌸', '🌹', '🌺', '🌷', '✨', '💖', '💐'];
-      for (let i = 0; i < 55; i++) {
+      const items = ['🌸', '🌹', '🌺', '🌷', '✨', '💖', '💐', '🎉'];
+      for (let i = 0; i < 60; i++) {
         setTimeout(() => {
           const flower = document.createElement('div');
           flower.className = 'flower';
@@ -86,7 +244,7 @@
           setTimeout(() => {
             flower.remove();
           }, 5500);
-        }, i * 130);
+        }, i * 120);
       }
     }
   </script>
